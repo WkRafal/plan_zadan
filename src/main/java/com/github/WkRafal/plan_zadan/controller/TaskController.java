@@ -16,7 +16,7 @@ public class TaskController {
     public static final Logger logger = LoggerFactory.getLogger(TaskController.class);
     private final TaskRepository repository;
 
-    public TaskController(TaskRepository repository) {
+    TaskController(final TaskRepository repository) {
         this.repository = repository;
     }
 
@@ -28,8 +28,8 @@ public class TaskController {
     }
 
     @GetMapping(value = "/tasks")
-    ResponseEntity<List<Task>> readAllTasks(Pageable pageable) {
+    ResponseEntity<List<Task>> readAllTasks(Pageable page) {
         logger.info("Custom pageable");
-        return ResponseEntity.ok(repository.findAll(pageable).getContent());
+        return ResponseEntity.ok(repository.findAll(page).getContent());
     }
 }
