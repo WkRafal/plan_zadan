@@ -22,3 +22,5 @@ target/
 
 mvnw
 mvnw.cmd
+
+*.db
