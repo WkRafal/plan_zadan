@@ -1,4 +1,4 @@
-package com.github.WkRafal.plan_zadan.configurtion;
+package com.github.WkRafal.plan_zadan.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties("task")
 public class TaskConfigurationProperties {
-    private Templete templete;
+    private Templete template;
 
-    public Templete getTemplete() {
-        return templete;
+    public Templete getTemplate() {
+        return template;
     }
 
-    public void setTemplete(Templete templete) {
-        this.templete = templete;
+    public void setTemplate(Templete template) {
+        this.template = template;
     }
 
     public static class Templete{

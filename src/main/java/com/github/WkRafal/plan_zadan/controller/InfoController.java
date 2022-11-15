@@ -1,8 +1,6 @@
 package com.github.WkRafal.plan_zadan.controller;
 
-import com.github.WkRafal.plan_zadan.configurtion.TaskConfigurationProperties;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import com.github.WkRafal.plan_zadan.configuration.TaskConfigurationProperties;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +27,6 @@ public class InfoController {
 
     @GetMapping("/info/prop")
     boolean myProp() {
-        return prop.getTemplete().isAllowMultipleTasks();
+        return prop.getTemplate().isAllowMultipleTasks();
     }
 }
