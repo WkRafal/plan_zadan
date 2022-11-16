@@ -3,7 +3,7 @@ spring:
     enabled: true
     path: '/console'
   datasource:
-    url: 'jdbc:h2:file:./plan_zadan-db'
-  jpa.hibernate.ddl-auto: create-drop
+    url: 'jdbc:h2:file:./plan-db'
+  jpa.hibernate.ddl-auto: validate
 
 
