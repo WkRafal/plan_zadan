@@ -54,8 +54,11 @@ public class TaskController {
     ResponseEntity<Task> updateTask(@PathVariable int id, @RequestBody @Valid Task update) {
         if (!repository.existsById(id))
             return ResponseEntity.notFound().build();
-        update.setId(id);
-        repository.save(update);
+        repository.findById(id)
+                .ifPresent(task -> {
+                    task.updateFrom(update);
+                    repository.save(task);  //or @Transactional
+                });
         return ResponseEntity.noContent().build();
     }
 
